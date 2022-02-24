@@ -2,7 +2,6 @@ package com.example.hibernate.controller;
 
 import com.example.hibernate.entity.User;
 import com.example.hibernate.service.IUserService;
-import com.example.hibernate.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,7 @@ public class UserController {
   @Autowired
   private IUserService userService;
 
-  @PostMapping
+  @PostMapping("")
   @ResponseStatus(HttpStatus.CREATED)
   User postUser(@Valid @RequestBody User user) {
     return userService.createUser(user);
